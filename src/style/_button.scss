@@ -1,0 +1,93 @@
+@import "_color.scss";
+
+/*按钮颜色*/
+$btn-init-color: #555;
+$btn-border-color: #c9c9c9;
+$btn-disabled-border-color: #e6e6e6;
+$btn-disabled-bg-color: #fbfbfb;
+$btn-disabled-color: #c9c9c9;
+
+@mixin size($height, $lineHeight, $padding, $fontSize) {
+    height: $height;
+    line-height: $lineHeight;
+    padding: padding;
+    font-size: $fontSize;
+}
+
+.button {
+    display: inline-block;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 18px;
+    background-color: $primary-color;
+    color: $white-color;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.8;
+    }
+    &:disabled {
+        border: 1px solid $btn-disabled-border-color;
+        background-color: $btn-disabled-bg-color;
+        color: $btn-disabled-color;
+        cursor: not-allowed;
+        opacity: 1;
+    }
+
+    &.btn-init {
+        background-color: $white-color;
+        color: $btn-init-color;
+        border: 1px solid $btn-border-color;
+        &:hover {
+            border-color: $primary-color;
+            color: #333;
+        }
+    }
+    &.btn-normal {
+        background-color: $bright-color;
+    }
+    &.btn-warm {
+        background-color: $warm-color;
+    }
+    &.btn-danger {
+        background-color: $danger-color;
+    }
+
+    &.btn-lg {
+        @include size(44px, 44px, 0 25px, 16px);
+    }
+    &.btn-sm {
+        @include size(30px, 30px, 0 10px, 12px);
+    }
+    &.btn-xs {
+        @include size(22px, 22px, 0 5px, 12px);
+    }
+
+    &.btn-radius {
+        border-radius: 100px;
+    }
+}
+
+.btn-group {
+    .button {
+        vertical-align: middle;
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        & + .button {
+            border-radius: 0;
+            border-left: 1px solid $white-color;
+        }
+        &:last-child {
+            border-radius: 2px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@import "_color.scss";
+
+.layui-card {
+  margin-bottom: 15px;
+  border-radius: 2px;
+  background-color: $white-color;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  .layui-card-header {
+    position: relative;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 15px;
+    border-bottom: 1px solid $color-f6;
+    color: $color-33;
+    border-radius: 2px 2px 0 0;
+    font-size: 14px;
+  }
+  .layui-card-body {
+    position: relative;
+    padding: 10px 15px;
+    line-height: 24px;
+  }
+}

@@ -1,0 +1,91 @@
+@import "_animate.scss";
+@import "_color.scss";
+@import "_common.scss";
+
+$border-top-color: #c2c2c2;
+
+.lay-select {
+    display: inline-block;
+    position: relative;
+    .layui-select-title {
+        position: relative;
+        .layui-edge {
+            position: absolute;
+            top: 50%;
+            right: 7px;
+            margin-top: -3px;
+            cursor: pointer;
+            border-top: 6px solid $border-top-color;
+            transition: all 0.3s;
+        }
+        .lay-input {
+            padding-right: 25px;
+        }
+    }
+    .layui-select-content {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 42px;
+        padding: 5px 0;
+        z-index: 899;
+        min-width: 100%;
+        border: 1px solid $bg-minor-color-level6;
+        max-height: 300px;
+        overflow-y: auto;
+        background-color: $white-color;
+        border-radius: 2px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+        box-sizing: border-box;
+        animation: animate-up-bit 0.2s linear;
+        dl {
+            padding: 0 10px;
+            font-size: 14px;
+            line-height: 36px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+            &:hover {
+                background-color: $bg-minor-color-level2;
+                transition: 0.5s all;
+            }
+            &.dl-this {
+                background-color: $select-color;
+                color: $white-color;
+            }
+            &.dl-disabled {
+                color: $bg-minor-color-level6;
+                user-select: none;
+                cursor: not-allowed !important;
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+            &.select-none {
+                margin: 5px 0;
+                text-align: center;
+                color: #999;
+            }
+        }
+        &.selectup {
+            top: auto;
+            bottom: 42px;
+        }
+        .select-tips {
+            color: #999;
+        }
+    }
+    &.selected {
+        .layui-edge {
+            margin-top: -9px;
+            transform: rotate(180deg);
+        }
+        .layui-select-content {
+            display: block;
+        }
+        &.select-tips {
+            color: $white-color;
+        }
+    }
+}

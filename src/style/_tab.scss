@@ -1,0 +1,117 @@
+@import "_color.scss";
+
+$bottomColor: #e6e6e6;
+
+@mixin themeTitle {
+  position: relative;
+  left: 0;
+  white-space: nowrap;
+  border-bottom: 1px solid $bottomColor;
+  transition: all 0.2s;
+}
+
+@mixin themeTitleLi {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  transition: all 0.2s;
+  position: relative;
+  line-height: 40px;
+  min-width: 65px;
+  padding: 0 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+@mixin themeTitleThis {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 41px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+// 默认风格
+.layui-tab {
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+  .layui-tab-title {
+    @include themeTitle();
+    li {
+      @include themeTitleLi();
+      &.layui-this {
+        color: #000;
+        &::after {
+          @include themeTitleThis();
+          border: 1px solid $bottomColor;
+          border-bottom: 1px solid $white-color;
+          border-radius: 2px 2px 0 0;
+        }
+      }
+      &.disabled {
+        color: $bg-gray999-color;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+.layui-tab-content {
+  padding: 10px;
+  .tab-content {
+    color: #333;
+    font-size: 13px;
+  }
+}
+// 简约风格
+.layui-simple {
+  @include themeTitle();
+  border: none;
+  .layui-tab-title {
+    li {
+      @include themeTitleLi();
+      &.layui-this {
+        border: none;
+        border-radius: 0;
+        &::after {
+          @include themeTitleThis();
+          border: none;
+          border-bottom: 2px solid $select-color;
+        }
+      }
+    }
+  }
+}
+// 卡片风格
+.layui-card {
+  @include themeTitle();
+  border: 1px solid #e6e6e6;
+  .layui-tab-title {
+    background-color: $bg-minor-color-level2;
+    li {
+      margin-top: 1px;
+      margin-right: -1px;
+      margin-left: -1px;
+      @include themeTitleLi();
+      &.layui-this {
+        background-color: $white-color;
+        border-radius: 2px;
+        &::after {
+          @include themeTitleThis();
+          border-top: none;
+          border-width: 1px;
+          border-bottom-color: #fff;
+        }
+      }
+    }
+  }
+}

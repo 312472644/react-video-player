@@ -1,0 +1,36 @@
+@import "_color.scss";
+
+.layui-collapse {
+  border: 1px solid $color-e6e6e6;
+  border-radius: 2px;
+  .layui-colla-item {
+    border-top: none;
+    border-color: $color-e6e6e6;
+    .layui-colla-title {
+      position: relative;
+      height: 42px;
+      line-height: 42px;
+      padding: 0 15px 0 35px;
+      color: $color-33;
+      background-color: $bg-minor-color-level2;
+      cursor: pointer;
+      font-size: 14px;
+      overflow: hidden;
+      .icon {
+        position: absolute;
+        left: 15px;
+        top: 16px;
+        font-size: 14px;
+      }
+    }
+    .layui-colla-content {
+      padding: 10px 15px;
+      line-height: 22px;
+      color: #666;
+      font-size: 13px;
+      &.hide {
+        display: none;
+      }
+    }
+  }
+}

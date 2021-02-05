@@ -1,0 +1,33 @@
+@import "_color.scss";
+
+.layui-textarea-container {
+    position: relative;
+    .layui-textarea {
+        display: block;
+        width: 100%;
+        min-height: 100px;
+        line-height: 20px;
+        padding: 6px 10px;
+        resize: vertical;
+        border: 1px solid #e6e6e6;
+        border-radius: 2px;
+        outline: none;
+        font-family: inherit;
+        box-sizing: border-box;
+    }
+    .layui-limit {
+        position: absolute;
+        font-size: 12px;
+        right: 10px;
+        bottom: 10px;
+        .use-word-count {
+            color: $bg-black-color;
+            &.is-max {
+                color: $danger-color;
+            }
+        }
+        .total-word {
+            color: $bg-gray999-color;
+        }
+    }
+}

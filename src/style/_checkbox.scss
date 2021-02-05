@@ -1,0 +1,173 @@
+@import "_color.scss";
+
+@mixin ticked($color, $width, $top, $left) {
+    .layui-icon-ok::after {
+        content: "";
+        position: absolute;
+        width: $width;
+        transform: rotate(315deg);
+        height: 5px;
+        top: $top;
+        left: $left;
+        border-left: 1px solid $color;
+        border-bottom: 1px solid $color;
+    }
+}
+
+.check-box {
+    display: inline-block;
+    position: relative;
+    input[type="checkbox"] {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        z-index: 9;
+        cursor: pointer;
+        &:disabled:hover {
+            cursor: not-allowed;
+        }
+    }
+    &:not(.checkbox-primary):not(.checkbox-switch) input[type="checkbox"]:checked + .layui-checkbox {
+        .layui-checkbox-text {
+            background-color: $select-color;
+        }
+        @include ticked($select-color, 13px, 8px, 8px);
+    }
+
+    // 复选框默认样式
+    &:not(.checkbox-primary):not(.checkbox-switch) .layui-checkbox {
+        position: relative;
+        height: 30px;
+        line-height: 30px;
+        padding-right: 30px;
+        cursor: pointer;
+        font-size: 0;
+        transition: 0.1s linear;
+        box-sizing: border-box;
+        .layui-checkbox-text {
+            display: inline-block;
+            padding: 0 10px;
+            height: 100%;
+            font-size: 14px;
+            border-radius: 2px 0 0 2px;
+            background-color: $bg-minor-color-level6;
+            color: $white-color;
+            overflow: hidden;
+        }
+        .layui-icon-ok {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 30px;
+            height: 28px;
+            border: 1px solid $bg-minor-color-level6;
+            border-left: none;
+            border-radius: 0 2px 2px 0;
+            color: $white-color;
+            font-size: 20px;
+            text-align: center;
+        }
+        &:hover {
+            @include ticked($select-color, 13px, 8px, 8px);
+        }
+    }
+
+    // primary复选框样式
+    &.checkbox-primary {
+        margin-right: 0;
+        padding-left: 28px;
+        padding-right: 0;
+        .layui-checkbox {
+            display: flex;
+            align-items: center;
+        }
+        .layui-checkbox-text {
+            padding-left: 0;
+            padding-right: 15px;
+            line-height: 18px;
+            color: #666;
+        }
+        .layui-icon-ok {
+            position: absolute;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            border: 1px solid $bg-minor-color-level6;
+            font-size: 12px;
+            border-radius: 2px;
+        }
+        input[type="checkbox"]:checked + .layui-checkbox {
+            .layui-icon-ok {
+                border-color: #5fb878 !important;
+                background-color: #5fb878;
+                color: #fff;
+            }
+            @include ticked($white-color, 10px, 3px, 2px);
+        }
+        input[type="checkbox"]:disabled + .layui-checkbox {
+            .layui-checkbox-text {
+                color: $bg-minor-color-level7;
+            }
+        }
+    }
+
+    // switch复选框样式
+    &.checkbox-switch {
+        position: relative;
+        height: 22px;
+        line-height: 22px;
+        min-width: 35px;
+        padding: 0 5px;
+        margin-top: 8px;
+        border-radius: 20px;
+        cursor: pointer;
+        background-color: $white-color;
+        transition: 0.1s linear;
+        .layui-checkbox {
+            border-radius: 20px;
+            margin: 0 -5px;
+            border: 1px solid $bg-minor-color-level6;
+        }
+        em {
+            position: relative;
+            top: 0;
+            width: 25px;
+            margin: 0 5px 0 21px;
+            padding: 0;
+            text-align: center;
+            color: $bg-gray999-color;
+            font-style: normal;
+            font-size: 12px;
+        }
+        i {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 20px;
+            background-color: #d2d2d2;
+            transition: 0.1s linear;
+        }
+        input[type="checkbox"]:checked + .layui-checkbox {
+            border-color: $select-color;
+            background-color: $select-color;
+            em {
+                margin-left: 5px;
+                margin-right: 21px;
+                color: $white-color;
+            }
+            i {
+                left: 100%;
+                margin-left: -21px;
+                background-color: #fff;
+            }
+        }
+    }
+}
