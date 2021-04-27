@@ -1,0 +1,14 @@
+@import "../../styles/index.scss";
+
+.pauseDialog {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: $video-bg-color-opacity;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}

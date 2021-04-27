@@ -1,0 +1,25 @@
+@import "../../styles/index.scss";
+
+.videoLoad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  background-color: $video-bg-color;
+}
+
+.loading {
+  :global {
+    .ant-spin-text {
+      color: $white-color;
+    }
+    .ant-spin-dot-item {
+      background-color: $white-color;
+    }
+  }
+}

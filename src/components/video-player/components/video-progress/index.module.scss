@@ -1,0 +1,67 @@
+@import "../../styles/index.scss";
+
+.progressContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  :global {
+    .ant-slider {
+      margin: 0;
+      padding: 0;
+      &:hover {
+        .ant-slider-step,
+        .ant-slider-track {
+          height: 10px;
+          transition: height 0.2s ease-in-out;
+        }
+        .ant-slider-handle {
+          display: block;
+        }
+      }
+    }
+    .ant-slider-step {
+      background: $color-999;
+    }
+    .ant-slider:hover {
+      .ant-slider-track {
+        background-color: $primary-color;
+      }
+      .ant-slider-handle:not(.ant-tooltip-open) {
+        border-color: $primary-color;
+      }
+    }
+    .ant-slider-track {
+      background-color: $primary-color;
+      z-index: 9;
+    }
+    .ant-slider-handle {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid $primary-color;
+      z-index: 10;
+    }
+  }
+}
+
+.progressTips {
+  position: absolute;
+  bottom: 0;
+  background: $video-bg-color;
+  font-size: 13px;
+  transform: translate(-20px, -25px);
+  line-height: 0;
+  border-radius: 3px;
+}
+
+.timeTip {
+  position: absolute;
+  bottom: 12px;
+  left: 8px;
+  color: $white-color;
+}
+
+.videoSnippet {
+  border-radius: 3px;
+}

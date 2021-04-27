@@ -1,0 +1,23 @@
+@import "../../styles/index.scss";
+
+.speedContainer {
+  margin-right: $menu-icon-right;
+}
+
+.videoSet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  :global {
+    .ant-switch {
+      background: $color-999;
+    }
+    .ant-switch.ant-switch-checked {
+      background: $primary-color;
+    }
+  }
+}
+
+.videoSetText {
+  padding-right: 5px;
+}

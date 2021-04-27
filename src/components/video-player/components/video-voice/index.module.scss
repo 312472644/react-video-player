@@ -1,0 +1,36 @@
+@import "../../styles/index.scss";
+
+.voiceContainer {
+  margin-right: 15px;
+}
+
+.voiceBox {
+  color: $white-color;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.voiceText {
+  padding-bottom: 5px;
+}
+
+.popoverVoice {
+  :global {
+    .ant-popover-inner {
+      height: 130px;
+    }
+    .ant-popover-inner-content {
+      width: 60px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      border-radius: 2px;
+    }
+    .ant-slider-vertical {
+      margin: 0;
+    }
+  }
+}
+

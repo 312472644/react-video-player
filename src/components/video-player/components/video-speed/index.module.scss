@@ -1,0 +1,39 @@
+@import "../../styles/index.scss";
+
+.playRateMenu {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.playRateItem {
+  cursor: pointer;
+  &:not(:last-of-type) {
+    padding-bottom: 8px;
+  }
+  &:hover {
+    color: $primary-color;
+  }
+}
+.activePlayRate {
+  color: $primary-color;
+}
+
+.speedText {
+  color: $white-color;
+  font-size: 15px;
+  vertical-align: text-bottom;
+  margin-right: $menu-icon-right;
+}
+
+.popoverSpeed {
+  :global {
+    .ant-popover-inner-content {
+      width: 100px;
+      padding: 8px 12px;
+      color: $white-color;
+      font-size: 15px;
+      text-align: center;
+    }
+  }
+}

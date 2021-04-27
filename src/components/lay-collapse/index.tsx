@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import classnames from 'classnames';
 import { RightOutlined, UpOutlined } from '@ant-design/icons';
 
@@ -39,7 +39,7 @@ const LayCollapse = (props: ICollapseProps) => {
 /**折叠面板子菜单 */
 const CollapsePanel = (props: IPanelProps) => {
   const { children, header, id, active, onClick } = props;
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(active);
 
   const collapseClick = (id: string) => {
     setShow(!show);
@@ -51,7 +51,7 @@ const CollapsePanel = (props: IPanelProps) => {
       {show ? <UpOutlined className="icon" style={{ fontSize: 12 }} /> : <RightOutlined className="icon" style={{ fontSize: 12 }} />}
       <span>{header}</span>
     </div>
-    <div className={classnames("layui-colla-content", !active || !show ? 'hide' : '')}>
+    <div className={classnames("layui-colla-content", !show ? 'hide' : '')}>
       {children}
     </div>
   </div>;

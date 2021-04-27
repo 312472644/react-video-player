@@ -1,0 +1,14 @@
+@import "../../styles/index.scss";
+
+.videoPlayContainer {
+  display: flex;
+}
+
+.videoTime {
+  display: flex;
+  color: $white-color;
+}
+
+.splitChar {
+  margin: 0 3px;
+}

@@ -27,7 +27,7 @@ const Select = (props: ISelectProps) => {
     const [selectItem, setSelectItem] = useState({ label: '', value: '' });
     const [inputValue, setInputValue] = useState('');
     const [isCover, setIsCover] = useState(false);
-    const [dataList, setDataList] = useState([] as IOption[]);
+    const [dataList, setDataList] = useState<IOption[]>([]);
 
     const titleClickEvent = (e: React.MouseEvent) => {
         e.stopPropagation();
@@ -42,7 +42,7 @@ const Select = (props: ISelectProps) => {
             return;
         }
         const { target } = e;
-        const element = target as HTMLElement;
+        const element = target as HTMLInputElement;
         // 父元素节点
         const parentElement = element.parentElement;
         const inputElement = parentElement?.querySelector(".lay-input") as HTMLInputElement;
@@ -107,7 +107,7 @@ const Select = (props: ISelectProps) => {
         initSelect();
         document.addEventListener('click', clickEvent);
         return () => { document.removeEventListener('click', clickEvent) };
-    });
+    }, []);
 
     return (
         <div className={classnames("lay-select", openStatus ? "selected" : "")}>
