@@ -1,10 +1,12 @@
 ### 说明
 
-sugar-video-player 是一个视频播放插件，支持一些基础视频播放设置。
+😏sugar-video-player 是一个视频播放插件，支持一些基础视频播放设置。
 
 ### 安装
 
-#### yarn add sugar-video-player 或者 npm install sugar-video-player
+```
+yarn add sugar-video-player 或者 npm install sugar-video-player
+```
 
 ### 插件依赖
 
